@@ -1,0 +1,138 @@
+/*start global rules*/
+:root {
+	--violet: hsl(257, 40%, 49%);
+	--soft-magenta: hsl(300, 69%, 71%);
+	--main-padding: 20px;
+	--main-margin: 40px;
+}
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+body {
+	font-family: 'Open Sans', sans-serif;
+	background-color: var(--violet);
+	background-image: url(../images/bg-desktop.svg);
+}
+/*end global rules*/
+/*start main*/
+.container {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+header {
+	margin: var(--main-margin);
+}
+.content {
+	display: flex;
+	overflow: hidden;
+	justify-content: space-evenly;
+	align-items: center; 
+	margin-top: calc(var(--main-margin) + 20px);
+}
+.content .text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	color: white;
+	max-width: 500px
+}
+.content h1 {
+	font-family: 'Poppins', sans-serif;
+	margin-bottom: var(--main-margin);
+}
+.content p {
+	line-height: 1.5;
+	margin-bottom: var(--main-margin);
+}
+.button {
+	width: fit-content;
+	padding: 15px 50px;
+	background-color: white;
+	color: var(--violet);
+	border-radius: 30px;
+	transition: 0.3s;
+	cursor: pointer;
+}
+.button:hover {
+	background-color: var(--soft-magenta);
+	color: white;
+}
+footer {
+	display: flex;
+	justify-content: flex-end;
+}
+footer i {
+	margin-top: var(--main-margin);
+	padding: 5px;
+	font-size: 40px;
+	cursor: pointer;
+	color: white;
+	transition: 0.3s;
+}
+footer i:last-child {
+	margin-right: var(--main-margin);
+}
+footer i:hover {
+	color: var(--soft-magenta);
+}
+/*end main*/
+@media (min-width: 300px) and (max-width: 500px){
+	header img {
+		width: 150px;
+	}
+	.content {
+		flex-direction: column;
+	    margin-top: -10px;
+	}
+	.content img {
+		width: 300px;
+	}
+	.content .text {
+		padding: 0 25px;
+	}
+	.content h1 {
+		margin-bottom: calc(var(--main-margin) - 20px);
+    	text-align: center;
+    	margin-top: 35px;
+    	font-size: 30px;
+	}
+	.content p {
+		text-align: center;
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+	.button {
+		padding: 15px 70px;
+		margin: 0 auto;
+	}
+	footer {
+		justify-content: center;
+	}
+	footer i:last-child {
+    	margin-right: 0;
+	}
+}
+@media (min-width: 501px) and (max-width: 767px) {
+	.content {
+		flex-direction: column;
+	}
+	header {
+		margin-bottom: 0;
+	}
+	.content {
+		margin-top: 20px;
+	}
+	.content img {
+		width: 500px;
+	}
+	.content h1 {
+		margin-top: var(--main-margin);
+		margin-bottom: 20px
+	}
+	.content p {
+		margin-bottom: 20px;
+	}
+}
